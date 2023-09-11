@@ -1,0 +1,29 @@
+# Archivos binarios y otros archivos generados
+/bin/
+*.exe
+*.out
+
+# Archivos de configuración del IDE y editor (Visual Studio Code)
+.vscode/
+
+# Archivos del sistema (Windows)
+Thumbs.db
+Desktop.ini
+
+# Archivos temporales de Go
+*.o
+*.a
+*.so
+
+# Carpetas de paquetes de Go
+vendor/
+
+# Otros archivos y carpetas ignorados comúnmente
+.DS_Store
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de depuración
+*.test
