@@ -13,6 +13,7 @@ func main() {
 	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
 
 	http.HandleFunc("/datos-persona", handler.DatosPersonaHandler)
+	http.HandleFunc("/listar-provincias", handler.ListarProvinciasHandler)
 
 	http.ListenAndServe(":8080", handlers.CORS(originsOk, headersOk, methodsOk)(http.DefaultServeMux))
 }
