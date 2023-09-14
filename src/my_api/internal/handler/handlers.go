@@ -104,10 +104,10 @@ func ListarProvinciasHandler(w http.ResponseWriter, r *http.Request) {
 	provincesToReturn := allProvinces[startIndex:endIndex]
 
 	columns := []model.Column{
-		{Header: "Nombre de Provincia", Field: "NombreProvincia"},
-		{Header: "Codigo Postal", Field: "CodigoPostal"},
-		{Header: "Capital Provincia", Field: "CapitalProvincia"},
-		{Header: "Superficie", Field: "Superficie"},
+		{Header: "Nombre de Provincia", Field: "nombreProvincia"},
+		{Header: "Codigo Postal", Field: "codigoPostal"},
+		{Header: "Capital Provincia", Field: "capitalProvincia"},
+		{Header: "Superficie", Field: "superficie"},
 	}
 
 	data := model.ProvinceResponse{
