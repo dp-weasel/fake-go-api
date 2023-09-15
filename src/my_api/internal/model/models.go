@@ -21,9 +21,9 @@ type PersonDataResponse struct {
 }
 
 type Province struct {
-	NombreProvincia  string `json:"nombre_provincia"`
-	CodigoPostal     string `json:"codigo_postal"`
-	CapitalProvincia string `json:"capital_provincia"`
+	NombreProvincia  string `json:"nombreProvincia"`
+	CodigoPostal     string `json:"codigoPostal"`
+	CapitalProvincia string `json:"capitalProvincia"`
 	Superficie       int    `json:"superficie"`
 }
 
