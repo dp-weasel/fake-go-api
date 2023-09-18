@@ -52,6 +52,7 @@ func DatosPersonaHandler(w http.ResponseWriter, r *http.Request) {
 		Page:        pageNumber,
 		TotalPages:  totalPages,
 		TotalSource: len(allPersons),
+		PageSize:    personasPerPage,
 		Columns: []model.Column{
 			{Header: "Nombre", Field: "nombre"},
 			{Header: "Apellido", Field: "apellido"},
@@ -128,6 +129,7 @@ func ListarProvinciasHandler(w http.ResponseWriter, r *http.Request) {
 		Page:        pageNumber,
 		TotalPages:  int(math.Ceil(float64(len(allProvinces)) / float64(provincesPerPage))),
 		TotalSource: len(allProvinces),
+		PageSize:    provincesPerPage,
 		Columns:     columns,
 		Source:      provincesToReturn,
 	}

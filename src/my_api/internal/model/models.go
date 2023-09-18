@@ -16,6 +16,7 @@ type PersonDataResponse struct {
 	Page        int      `json:"page"`
 	TotalPages  int      `json:"total_pages"`
 	TotalSource int      `json:"total_source"`
+	PageSize    int      `json:"page_size"`
 	Columns     []Column `json:"columns"`
 	Source      []Person `json:"source"`
 }
@@ -31,6 +32,7 @@ type ProvinceResponse struct {
 	Page        int        `json:"page"`
 	TotalPages  int        `json:"total_pages"`
 	TotalSource int        `json:"total_source"`
+	PageSize    int        `json:"page_size"`
 	Columns     []Column   `json:"columns"`
 	Source      []Province `json:"source"`
 }
