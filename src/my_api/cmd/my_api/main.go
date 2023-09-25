@@ -14,6 +14,7 @@ func main() {
 
 	http.HandleFunc("/datos-persona", handler.DatosPersonaHandler)
 	http.HandleFunc("/listar-provincias", handler.ListarProvinciasHandler)
+	http.HandleFunc("/listar-formulario-provincias", handler.ListarFormularioProvinciasHandler)
 
 	http.ListenAndServe(":8080", handlers.CORS(originsOk, headersOk, methodsOk)(http.DefaultServeMux))
 }

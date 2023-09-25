@@ -141,3 +141,89 @@ func ListarProvinciasHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Error encoding JSON:", err)
 	}
 }
+
+func ListarFormularioProvinciasHandler(w http.ResponseWriter, r *http.Request) {
+	// Definir los campos del formulario
+	formFields := []model.FormField{
+		{
+			Name:      "name",
+			Value:     "",
+			Type:      "text",
+			ID:        "name",
+			InputType: "input",
+			Required:  true,
+		},
+		{
+			Name:      "address",
+			Value:     "",
+			Type:      "text",
+			ID:        "address",
+			InputType: "input",
+		},
+		{
+			Name:      "age",
+			Value:     "",
+			Type:      "number",
+			ID:        "age",
+			InputType: "input",
+		},
+		{
+			Name:      "telephone",
+			Value:     "",
+			Type:      "tel",
+			ID:        "telephone",
+			InputType: "input",
+		},
+		{
+			Name:      "sex",
+			Type:      "radio",
+			InputType: "input",
+			Options: []model.Option{
+				{
+					ID:    "male",
+					Label: "male",
+					Value: "male",
+				},
+				{
+					ID:    "female",
+					Label: "female",
+					Value: "female",
+				},
+			},
+		},
+		{
+			Name:      "country",
+			Value:     "",
+			Type:      "",
+			ID:        "country",
+			InputType: "select",
+			Options: []model.Option{
+				{
+					Label: "Nigeria",
+					Value: "nigeria",
+				},
+				{
+					Label: "United States",
+					Value: "us",
+				},
+				{
+					Label: "UK",
+					Value: "uk",
+				},
+			},
+		},
+	}
+
+	// Convertir los campos del formulario a JSON
+	jsonData, err := json.Marshal(formFields)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Establecer la cabecera de respuesta como aplicación JSON
+	w.Header().Set("Content-Type", "application/json")
+
+	// Escribir el JSON en la respuesta
+	w.Write(jsonData)
+}
